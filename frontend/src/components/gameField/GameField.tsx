@@ -1,11 +1,10 @@
 import styles from "./gameField.module.css";
 import { useFieldState } from "../../state/game";
 import { FieldPosition } from "../../state/types";
-import { getCheckedByChar } from "../../util/util";
+import PlayerCheckmark from "../playerCheckmark/PlayerCheckmark";
 
 export default function GameField(fieldPosition: FieldPosition) {
   const { checkedBy, checkField, active } = useFieldState(fieldPosition);
-  const icon = getCheckedByChar(checkedBy);
   const className = `${styles.field} ${checkedBy === null ? styles.empty : ""}`;
   // console.log('Render GameField', fieldPosition);
 
@@ -19,7 +18,7 @@ export default function GameField(fieldPosition: FieldPosition) {
         console.log("click");
       }}
     >
-      {icon}
+      <PlayerCheckmark player={checkedBy} />
     </button>
   );
 }

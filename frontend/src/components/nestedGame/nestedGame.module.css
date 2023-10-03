@@ -1,5 +1,5 @@
 .innerGrid {
-  /* border: 1px solid red; */
+  z-index: 5;
   padding: 1rem;
 }
 
@@ -10,8 +10,14 @@
 
 .checkedByOverlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 6rem;
+  padding: 1.5rem;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  height: calc(100% - 3rem);
+  width: calc(100% - 3rem);
+}
+
+.background {
+  opacity: 0.5;
 }
