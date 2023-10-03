@@ -1,0 +1,21 @@
+.grid {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  aspect-ratio: 1;
+}
+
+.grid>* {
+  /* To keep consistent spacing & size for all children */
+  border: 1px solid transparent;
+}
+
+.grid>*:nth-child(3n-1) {
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+}
+
+
+.grid>*:nth-last-child(1n+4) {
+  border-bottom: 1px solid grey;
+}

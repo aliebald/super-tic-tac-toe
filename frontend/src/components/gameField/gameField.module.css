@@ -1,0 +1,13 @@
+.field {
+  padding: 0.5rem;
+  aspect-ratio: 1;
+  overflow: hidden;
+
+  /* Reset disabled properties */
+  background-color: transparent;
+  color: inherit;
+}
+
+.empty:not(:disabled) {
+  background-color: rgba(113, 255, 47, 0.15);
+}
