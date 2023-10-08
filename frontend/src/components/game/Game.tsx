@@ -7,13 +7,15 @@ import { Player } from "../../state/players";
 
 export default function Game() {
   const { winner, nextPlayer } = useGameState();
+  const subtitle =
+    winner !== null ? getWinnerOrDrawMessage(winner) : `${getPlayerAsString(nextPlayer)}'s move`;
   return (
     <div>
-      <h2>{winner !== null ? getWinnerOrDrawMessage(winner) : `${getPlayerAsString(nextPlayer)}'s move`}</h2>
+      <h2>{subtitle}</h2>
       <GameGrid>
-        {range(9).map((i) =>
+        {range(9).map((i) => (
           <NestedGame key={i} outerGameField={i as NineTupleIndex} />
-        )}
+        ))}
       </GameGrid>
     </div>
   );
@@ -23,7 +25,7 @@ function getPlayerAsString(player: Player) {
   return player === Player.X ? "X" : "O";
 }
 
-function getWinnerOrDrawMessage(winner: Player | 'draw'): string {
+function getWinnerOrDrawMessage(winner: Player | "draw"): string {
   switch (winner) {
     case Player.X:
     case Player.O:

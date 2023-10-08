@@ -24,7 +24,7 @@
 
 @media only screen and (max-width: 430px) {
   .innerGrid {
-    padding: .5rem;
+    padding: 0.5rem;
   }
 
   .checkedByOverlay {

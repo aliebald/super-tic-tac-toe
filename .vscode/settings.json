@@ -1,11 +1,13 @@
 {
-  "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
-  "editor.formatOnSave": true,
-  "files.eol": "\n",
-  "editor.insertSpaces": true,
-  "editor.indentSize": 2,
-  "prettier.tabWidth": 2,
-  "prettier.useTabs": false,
-  "prettier.trailingComma": "es5",
-  "prettier.printWidth": 120
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.codeActionsOnSave": { "source.fixAll.eslint": true },
+	"editor.formatOnSave": true,
+	"files.eol": "\n",
+	"editor.insertSpaces": true,
+	"editor.indentSize": 2,
+	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false, // Handled by ESLint / Prettier
+	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false, // Handled by ESLint / Prettier
+	"javascript.format.semicolons": "ignore", // Handled by ESLint / Prettier
+	"typescript.format.semicolons": "ignore", // Handled by ESLint / Prettier
+	"eslint.workingDirectories": ["./frontend"]
 }
