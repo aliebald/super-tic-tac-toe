@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { Player } from "./players";
-import { cloneDeep, range } from "lodash";
-import { FieldPosition, NestedGameField, NineTuple, NineTupleIndex, OuterGameState } from "./types";
+import { cloneDeep } from "lodash";
+import { FieldPosition, NestedGameField, NineTupleIndex, OuterGameState } from "./types";
 import { checkForWinner, getInitialState } from "./util";
 
 interface GameStore {

@@ -1,8 +1,7 @@
 import { range } from "lodash";
-import { Player } from "./players";
-import { NineTuple, OuterGameState } from "./types";
+import type { GameWinner, NineTuple, OuterGameState } from "./types";
 
-export function checkForWinner(fields: NineTuple<{ checkedBy: Player | null; }>): Player | null {
+export function checkForWinner(fields: NineTuple<{ checkedBy: GameWinner; }>): GameWinner {
   const winningCombinations = [
     [0, 1, 2],
     [3, 4, 5],
@@ -22,7 +21,8 @@ export function checkForWinner(fields: NineTuple<{ checkedBy: Player | null; }>)
       return fields[a].checkedBy;
     }
   }
-  return null;
+  const isDraw = !fields.some(field => field.checkedBy === null);
+  return isDraw ? "draw" : null;
 }
 
 function getNineTuple<T>(elementConstructor: (index: number) => T): NineTuple<T> {
