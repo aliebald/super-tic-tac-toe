@@ -1,6 +1,7 @@
+import styles from "./game.module.css";
 import { range } from "lodash";
-import GameGrid from "../gameGrid/GameGrid";
-import NestedGame from "../nestedGame/NestedGame";
+import GameGrid from "../../components/gameGrid/GameGrid";
+import NestedGame from "../../components/nestedGame/NestedGame";
 import type { NineTupleIndex } from "../../state/types";
 import { useGameState } from "../../state/game";
 import { Player } from "../../state/players";
@@ -10,7 +11,7 @@ export default function Game() {
   const subtitle =
     winner !== null ? getWinnerOrDrawMessage(winner) : `${getPlayerAsString(nextPlayer)}'s move`;
   return (
-    <div>
+    <div className={styles.container}>
       <h2>{subtitle}</h2>
       <GameGrid>
         {range(9).map((i) => (
